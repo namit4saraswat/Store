@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ea!sysjkv%3w*$@t_r@@p6)97z3-h9g5b3+71vuwmp%4+%+y2i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['statetender.herokuapp.com']
+ALLOWED_HOSTS = ['statetender.herokuapp.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://statetender.herokuapp.com'
