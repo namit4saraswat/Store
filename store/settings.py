@@ -126,7 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Added manually
 
-ALLOWED_HOSTS = ['namitapi.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['namitapi.herokuapp.com' ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://namitapi.herokuapp.com/'
