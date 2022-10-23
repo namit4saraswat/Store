@@ -5,3 +5,4 @@ from . import models
 
 admin.site.register(models.state)
 admin.site.register(models.tender)
+admin.site.register(models.Contact)

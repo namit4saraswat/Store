@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,12 +25,6 @@ SECRET_KEY = 'django-insecure-ea!sysjkv%3w*$@t_r@@p6)97z3-h9g5b3+71vuwmp%4+%+y2i
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ['namitapi.herokuapp.com', 'localhost']
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://namitapi.herokuapp.com/'
-]
 
 # Application definition
 
@@ -59,7 +54,7 @@ ROOT_URLCONF = 'store.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +115,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 MEDIA_URL = '/media/'
@@ -128,3 +123,20 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Added manually
+
+ALLOWED_HOSTS = ['namitapi.herokuapp.com', 'localhost', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://namitapi.herokuapp.com/'
+]
+
+# STATICFILES_DIR = [
+#     os.path.join(BASE_DIR, "static")
+# ]
+ 
+MESSAGE_TAGS = {
+    messages.INFO: '',
+    50: 'critical',
+}

@@ -21,3 +21,12 @@ class tender(models.Model):
 
     def __str__(self):
         return self.tenderID
+
+class Contact(models.Model):
+    name = models.CharField(max_length=200, blank=True, verbose_name= "Tender Name")
+    email = models.CharField(max_length=200, blank=True, verbose_name= "Email")
+    query = models.CharField(max_length=200, blank=True, verbose_name= "Query Description")
+    phone = models.CharField(max_length=200, blank=True, verbose_name= "Phone")
+    
+    def __str__(self):
+        return self.name

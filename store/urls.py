@@ -18,11 +18,18 @@ from django.urls import path, include
 from app1 import views
 from rest_framework import routers
 
+admin.site.site_header = "Zaami Admin"
+admin.site.site_title = "Zaami Admin Portal"
+admin.site.index_title = "Welcome to Zaamii Tender Portal"
+
 router = routers.DefaultRouter()
 router.register(r'state', views.StateViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.Hello),
     path('api/', include(router.urls)),
+    path('about/', views.about),
+    path('contact/', views.contact),
+    path('', views.index)
     # path('hello2/', views.Hello2),
 ]
