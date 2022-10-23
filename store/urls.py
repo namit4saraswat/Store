@@ -30,6 +30,8 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('about/', views.about),
     path('contact/', views.contact),
-    path('', views.index)
+    path('home/', views.index),
+    path('', views.index),
+    path('login/', views.login),
     # path('hello2/', views.Hello2),
 ]

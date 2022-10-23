@@ -18,17 +18,25 @@ def index(request):
 def about(request):
     return render(request, 'about.html' )
 
+def login(request):
+    return render(request, 'login.html')
+
 def contact(request):
-    if request == "POST":
-        name = request.POST.get('name')
+    if request.method == "POST":
+        name = request.POST.get('fname')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         query = request.POST.get('query') 
 
-    contact = Contact(name = name, email=email, phone= phone, query= query ) 
-    contact.save()
-    messages.add_message(request, messages.INFO, 'Record Uploaded')
-    return render(request, 'contact.html' )
+        contact = Contact(name = name, email = email, phone = phone, query = query ) 
+        contact.save()
+        messages.success(request, 'Record updated successfully')
+        return render(request, 'contact.html')
+
+    elif request.method == "GET":
+        return render(request, 'contact.html')
+    # else:
+    #     return HttpResponse('An Error Occurred')
 
 
 
